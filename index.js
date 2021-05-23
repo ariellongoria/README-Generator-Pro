@@ -10,28 +10,32 @@ const questions = [
     },
     {
         type: "editor",
-        message: "Write a description for your project. (Use markdown to format this section)",
+        message:
+            "Write a description for your project. (Use markdown to format this section. Save and exit to include in the README)",
         name: "description",
     },
     {
         type: "editor",
-        message: "How do you install dependencies for your project? (Use markdown to format this section)",
+        message:
+            "How do you install dependencies for your project? (Use markdown to format this section. Save and exit to include in the README)",
         name: "installation",
     },
     {
         type: "editor",
         message:
-            "Provide instructions for the users to correctly use your project. (Use markdown to format this section)",
+            "Provide instructions for the users to correctly use your project. (Use markdown to format this section. Save and exit to include in the README)",
         name: "usage",
     },
     {
         type: "editor",
-        message: "How can other developers contribute to your project? (Use markdown to format this section)",
+        message:
+            "How can other developers contribute to your project? (Use markdown to format this section. Save and exit to include in the README)",
         name: "contributing",
     },
     {
         type: "editor",
-        message: "Show examples and tests for your application here. (Use markdown to format this section)",
+        message:
+            "Show examples and tests for your application here. (Use markdown to format this section. Save and exit to include in the README)",
         name: "tests",
     },
     {
@@ -56,7 +60,7 @@ const questions = [
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
         if (err) throw err;
-        console.log("The file has been saved!");
+        console.log("The file has been saved! Check this directory for a readmes folder.");
     });
 }
 
