@@ -49,7 +49,7 @@ ${data.description}
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
-* [Questions](#question)
+* [Questions](#questions)
 
 ## Installation
 
