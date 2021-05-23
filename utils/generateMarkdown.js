@@ -25,7 +25,7 @@ function renderLicenseSection(license) {
     if (license !== "None") {
         return `## License
 
-This project is covered under the ${license} license. Read more about it here: ${renderLicenseLink(data.license)}.
+This project is covered under the ${license} license. Read more about it here: ${renderLicenseLink(license)}.
 `;
     } else {
         return "";
