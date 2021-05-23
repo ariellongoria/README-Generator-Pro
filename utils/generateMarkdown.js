@@ -1,18 +1,80 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+    if (license !== "None") {
+        return `![](https://img.shields.io/badge/license-${license}-blue/)`;
+    } else {
+        return "";
+    }
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+    switch (license) {
+        case "MIT":
+            return `[${license}](https://choosealicense.com/licenses/mit/)`;
+        case "Apache":
+            return `[${license}](https://choosealicense.com/licenses/apache-2.0/)`;
+        case "GNU":
+            return `[${license}](https://choosealicense.com/licenses/gpl-3.0/)`;
+        case "ISC":
+            return `[${license}](https://choosealicense.com/licenses/isc/)`;
+        default:
+            return "";
+    }
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+    if (license !== "None") {
+        return `## License
 
-// TODO: Create a function to generate markdown for README
+This project is covered under the ${license} license. Read more about it here: ${renderLicenseLink(data.license)}.
+`;
+    } else {
+        return "";
+    }
+}
+
 function generateMarkdown(data) {
-  return `# ${data.title}
+    return `# ${data.title}
+
+${renderLicenseBadge(data.license)}
+
+## Description
+
+${data.description}
+
+---
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#question)
+
+## Installation
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+${data.tests}
+
+## Questions
+
+For questions other questions regarding this or other projects, check out [my GitHub](github.com/${
+        data.github
+    }) or send me an email at ${data.email}.
+
+---
+${renderLicenseSection(data.license)}
 
 `;
 }
